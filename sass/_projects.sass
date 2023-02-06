@@ -1,0 +1,54 @@
+.projects
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr))
+    //grid-gap: 3rem
+
+    padding-bottom: 3rem
+    border-bottom: 0.3rem solid black
+    margin-bottom: 3rem
+
+.project
+    position: relative
+    transition: all .5s
+
+    &__img
+        max-width: 100%
+        height: 100%
+        object-fit: cover   
+
+    &__title
+        font-size: 2rem
+        font-weight: 900
+        line-height: 1.35
+        margin-bottom: 1rem
+
+    &__type
+        font-size: 1.4rem
+        font-weight: 300
+        line-height: 1.35   
+
+    &__textarea
+        display: none
+        position: absolute
+        top: 15%   
+        left: 8%
+        z-index: 999
+
+    &:after 
+        content: ""
+        opacity: 0
+        transition: all .3s
+
+    &:hover &__textarea
+         display: block       
+
+    &:hover:after 
+        display: block
+        width: 100%
+        height: 100% 
+        position: absolute
+        top: 0   
+        left: 0   
+        background: $color-white
+        opacity: 0.8
+            

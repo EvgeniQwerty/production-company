@@ -1,0 +1,33 @@
+.header
+    grid-column: center-start / center-end
+    background-color: $color-white
+    
+    display: grid
+    justify-content: space-between
+    align-content: center
+    grid-template-columns: max-content max-content max-content
+
+    padding: 1rem 3rem 
+
+    margin-bottom: 1rem
+
+    border-bottom: 0.3rem solid black
+
+    &__nav
+        align-self: center
+
+    &__logo
+        max-width: 20rem    
+
+    &__contacts
+        align-self: center
+        text-align: center
+        text-transform: uppercase
+        text-decoration: none
+        font-weight: 500
+        font-size: 1.8rem
+        line-height: 2rem
+
+.link
+    &:hover, active 
+        color: $color-gray      
