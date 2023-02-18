@@ -2,12 +2,14 @@
     width: 100%
     &__list
         display: grid
-        //grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr))
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(4, max-content)
+        //grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))
         align-content: center
         list-style-type: none
-        grid-gap: 3.5rem
+        grid-gap: 3rem
+        //grid-gap: 5rem
     &__item
+        display: block
         a:link, a:visited
             text-align: center
             text-transform: uppercase
@@ -15,7 +17,7 @@
             font-weight: 500
             font-size: 1.8rem
             line-height: 2rem
-            color: $color-black
+            color: $color-white
             transition: all 0.3s
         a:hover, active
             color: $color-gray

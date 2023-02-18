@@ -1,23 +1,33 @@
 .header
-    grid-column: center-start / center-end
-    background-color: $color-white
+    z-index: 999
+    position: fixed
+    //left:50%
+    //margin-left:-25%
+    
+    //grid-column: center-start / center-end
+    grid-column: full-start / full-end
     
     display: grid
+    grid-gap: 3rem
+
+    justify-self: center
+
     justify-content: space-between
     align-content: center
-    grid-template-columns: max-content max-content max-content
+    grid-template-columns: max-content
 
-    padding: 1rem 3rem 
+    padding: 3rem 3rem 
 
     margin-bottom: 1rem
 
-    border-bottom: 0.3rem solid black
+    //border-bottom: 0.3rem solid $color-white
 
     &__nav
         align-self: center
 
     &__logo
-        max-width: 20rem    
+        max-width: 20rem   
+        align-self: center 
 
     &__contacts
         align-self: center

@@ -5,40 +5,51 @@
 }
 
 a {
-  color: black;
+  color: white;
   text-decoration: none;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
   transition: all 0.3s;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1.4rem;
 }
 
 html {
   font-size: 10px;
-  font-family: "Roboto";
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
-  color: black;
+  color: white;
 }
 
 .container {
-  background-color: white;
+  background-color: black;
   display: grid;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] 3fr [center-end] minmax(6rem, 1fr) [full-end];
 }
 
 .header {
-  grid-column: center-start/center-end;
-  background-color: white;
+  z-index: 999;
+  position: fixed;
+  grid-column: full-start/full-end;
   display: grid;
+  grid-gap: 3rem;
+  justify-self: center;
   justify-content: space-between;
   align-content: center;
-  grid-template-columns: max-content max-content max-content;
-  padding: 1rem 3rem;
+  grid-template-columns: max-content;
+  padding: 3rem 3rem;
   margin-bottom: 1rem;
-  border-bottom: 0.3rem solid black;
 }
 .header__nav {
   align-self: center;
 }
 .header__logo {
   max-width: 20rem;
+  align-self: center;
 }
 .header__contacts {
   align-self: center;
@@ -55,11 +66,15 @@ html {
 }
 
 .footer {
-  padding: 5rem 0;
-  grid-column: center-start/center-end;
-  background-color: white;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  justify-self: center;
+  padding: 1rem 0;
+  grid-column: full-start/full-end;
+  justify-self: center;
+  display: flex;
+  gap: 3rem;
 }
 .footer__title {
   font-size: 1.6rem;
@@ -69,7 +84,10 @@ html {
 }
 .footer__item {
   font-size: 1.4rem;
-  margin-bottom: 1rem;
+}
+.footer__box {
+  display: flex;
+  gap: 1rem;
 }
 
 .nav {
@@ -77,10 +95,13 @@ html {
 }
 .nav__list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, max-content);
   align-content: center;
   list-style-type: none;
-  grid-gap: 3.5rem;
+  grid-gap: 3rem;
+}
+.nav__item {
+  display: block;
 }
 .nav__item a:link, .nav__item a:visited {
   text-align: center;
@@ -89,7 +110,7 @@ html {
   font-weight: 500;
   font-size: 1.8rem;
   line-height: 2rem;
-  color: black;
+  color: white;
   transition: all 0.3s;
 }
 .nav__item a:hover, .nav__item active {
@@ -97,13 +118,15 @@ html {
 }
 
 .title-1 {
-  font-size: 4.8rem;
+  font-size: 3.2rem;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 .title-2 {
-  font-size: 3.2rem;
-  font-weight: 500;
+  font-size: 6.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .title-3 {
@@ -138,38 +161,36 @@ html {
   margin-bottom: 3rem;
 }
 
-.portfolio {
-  grid-column: center-start/center-end;
-  background-color: white;
-  display: grid;
-  grid-template-rows: 90vh repeat(2, max-content);
+.mb1rem {
+  margin-bottom: 1rem;
 }
-.portfolio__showreel {
-  justify-self: center;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
-  border-bottom: 0.3rem solid black;
+
+.small {
+  font-size: 1.2rem;
+}
+
+.portfolio {
+  padding-bottom: 10rem;
+  grid-column: center-start/center-end;
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
 }
 .portfolio__title {
   text-align: center;
   padding-bottom: 3rem;
-  border-bottom: 0.3rem solid black;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
 .projects {
+  margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-  padding-bottom: 3rem;
-  border-bottom: 0.3rem solid black;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 6rem 3rem;
   margin-bottom: 3rem;
 }
 
 .project {
-  position: relative;
   transition: all 0.5s;
 }
 .project__img {
@@ -178,127 +199,54 @@ html {
   object-fit: cover;
 }
 .project__title {
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 1.4rem;
+  font-weight: 500;
   line-height: 1.35;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .project__type {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.35;
 }
-.project__textarea {
-  display: none;
-  position: absolute;
-  top: 15%;
-  left: 8%;
-  z-index: 999;
+.project_video {
+  grid-column: span 4;
 }
-.project:after {
-  content: "";
-  opacity: 0;
-  transition: all 0.3s;
-}
-.project:hover .project__textarea {
-  display: block;
-}
-.project:hover:after {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: white;
-  opacity: 0.8;
+.project_photo {
+  grid-column: span 2;
 }
 
-.services {
-  grid-column: center-start/center-end;
-  background-color: white;
-  padding-bottom: 3rem;
-  border-bottom: 0.3rem solid black;
-  margin-bottom: 3rem;
-}
-.services__title {
-  text-align: center;
-  padding-bottom: 3rem;
-  border-bottom: 0.3rem solid black;
-  margin-bottom: 3rem;
-}
-
-.services-box {
+.main {
+  margin-bottom: 5rem;
+  grid-column: full-start/full-end;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-  grid-gap: 3rem;
+  align-content: center;
+  justify-content: center;
 }
-
-.service {
-  padding: 3rem;
-  display: grid;
-  grid-template-rows: repeat(3, min-content);
-  justify-items: center;
-  transition: all 0.3s;
-}
-.service__img {
-  width: 14rem;
-  margin-bottom: 1rem;
-}
-.service__title {
-  margin-bottom: 3rem;
-}
-.service__text {
-  font-size: 1.6rem;
-  text-align: center;
-  line-height: 1.5;
-}
-.service:hover {
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-.about {
-  grid-column: center-start/center-end;
-  background-color: white;
-  padding-bottom: 3rem;
-  border-bottom: 0.3rem solid black;
-  margin-bottom: 3rem;
-}
-.about__title {
-  text-align: left;
-  padding-bottom: 3rem;
-  border-bottom: 0.3rem solid black;
-  margin-bottom: 3rem;
-}
-.about__text {
-  font-size: 1.8rem;
-  font-weight: 300;
-  line-height: 1.5;
-  text-align: justify;
-}
-.about__team {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 1rem;
+.main__wrapper {
+  position: relative;
+  z-index: 10;
   align-content: center;
 }
 
-.about-box {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 3rem;
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 1;
 }
 
-.team-item__img {
-  width: 25rem;
-  margin-bottom: 1rem;
-}
-.team-item__name {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-.team-item__prof {
-  font-size: 1.6rem;
-  font-weight: 300;
+.bg-grad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: rgba(1, 1, 1, 0.7);
+  z-index: 2;
 }/*# sourceMappingURL=style.css.map */

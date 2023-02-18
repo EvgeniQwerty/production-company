@@ -8,19 +8,26 @@ $color-gray: gray
     box-sizing: border-box
 
 a
-    color: $color-black
+    color: $color-white
     text-decoration: none
-    transition: all .3s 
+    text-shadow: 0px 0px 10px rgba(255,  255,  255, 0.5)
+    transition: all .3s
+
+    &:hover
+        text-decoration: underline
+
+p
+    font-size: 1.4rem    
 
 
 html
     font-size: 10px
-    font-family: 'Roboto'
+    font-family: 'Montserrat', sans-serif
     font-weight: 300
-    color: $color-black
+    color: $color-white
 
 .container
-    background-color: $color-white
+    background-color: $color-black
 
     display: grid
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] 3fr [center-end] minmax(6rem, 1fr) [full-end]   
