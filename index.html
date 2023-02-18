@@ -23,7 +23,9 @@
             <li class="nav__item"><a href="#portfolio">Все проекты</a></li>
             <li class="nav__item"><a href="#portfolio">Рекламные ролики</a></li>
             <li class="nav__item"><a href="#portfolio">Клипы</a></li>
-            <li class="nav__item"><a href="#portfolio">Студийные фотосъёмки</a></li>
+            <li class="nav__item">
+              <a href="#portfolio">Студийные фотосъёмки</a>
+            </li>
           </ul>
         </nav>
 
@@ -35,6 +37,20 @@
         </p> -->
       </header>
 
+      <div class="video-container">
+
+        <iframe
+          class="video-player display-none"
+          src="https://player.vimeo.com/video/161658210?h=d600526d09"
+          width="1280"
+          height="720"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+      </div>
+
       <main class="main">
         <div class="bg-grad"></div>
 
@@ -44,21 +60,39 @@
         </video>
 
         <div class="main__wrapper">
-          <h2 class="title-2">BAZA</h2>
-          <h1 class="title-1 mb3rem">Production team <br />Based in Kirov</h1>
+          <div class="main__second-wrapper">
+            <div class="main__maintext">
+              <h2 class="title-2">BAZA</h2>
+              <h1 class="title-1 mb3rem">
+                Production team <br />Based in Kirov
+              </h1>
+            </div>
 
-          <p class="main__text mb1rem">Clients</p>
-          <p class="main__running mb3rem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit blanditiis ut iure non tempora iusto numquam perferendis error itaque maxime!</p>
+            <img
+                src="icons/youtube.svg"
+                alt="showreel"
+                class="main__youtube clickable"
+                data-type="video"
+                data-url="https://player.vimeo.com/video/161658210?h=d600526d09"
+            />
+          </div>
+          <p class="main__text mb1rem">Clients:</p>
+          <marquee direction="right" scrollamount="5" class="main__running mb3rem">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus eaque aliquam, incidunt provident aliquid dignissimos totam unde iste repudiandae officia.
+          </marquee>
 
           <p class="main__rights small">
-            All contents of this website are the property of BAZA®. No part of this site, including all text and images, may be reproduced in any form without the prior written consent of BAZA®.</p>
+            All contents of this website are the property of BAZA®. No part of
+            this site, including all text and images, may be reproduced in any
+            form without the prior written consent of BAZA®.
+          </p>
         </div>
       </main>
 
       <div class="portfolio" id="portfolio">
         <div class="portfolio__projects projects">
           <div class="project project_video">
-            <img src="img/1.png" alt="Видео" class="project__img" />
+            <img src="img/1.png" alt="Видео" class="project__img clickable" data-type="video" data-url="https://player.vimeo.com/video/293588631?h=f2104258d8"/>
             <div class="project__textarea">
               <p class="project__title">Тренажёрный зал "Звёздный"</p>
               <p class="project__type">Рекламный видеоролик</p>
@@ -66,7 +100,7 @@
           </div>
 
           <div class="project project_video">
-            <img src="img/2.png" alt="Видео" class="project__img" />
+            <img src="img/2.png" alt="Видео" class="project__img clickable" data-type="video" data-url="https://player.vimeo.com/video/103431880?h=05ba961527"/>
             <div class="project__textarea">
               <p class="project__title">Кинотеатр "Смена"</p>
               <p class="project__type">Рекламный видеоролик</p>
@@ -114,7 +148,7 @@
           </div>
 
           <div class="project project_video">
-            <img src="img/8.png" alt="Видео" class="project__img" />
+            <img src="img/8.png" alt="Видео" class="project__img clickable" data-type="video" data-url="https://player.vimeo.com/video/576212616?h=423ea435a6"/>
             <div class="project__textarea">
               <p class="project__title">Студия звукозаписи "Acid sound"</p>
               <p class="project__type">Рекламный видеоролик</p>
@@ -134,15 +168,24 @@
       <footer class="footer">
         <div class="footer__box">
           <p class="footer__title">Follow</p>
-          <p class="footer__item"><a class="link" href="https://vk.com">VK</a></p>
+          <p class="footer__item">
+            <a class="link" href="https://vk.com">VK</a>
+          </p>
         </div>
 
         <div class="footer__box">
           <p class="footer__title">Contact</p>
-          <p class="footer__item"><a href="tel:+78005553535">8 (800) 555-35-35</a></p>
-          <p class="footer__item"><a href="mailto:test@test.com">test@test.com</a></p>
+          <p class="footer__item">
+            <a href="tel:+78005553535">8 (800) 555-35-35</a>
+          </p>
+          <p class="footer__item">
+            <a href="mailto:test@test.com">test@test.com</a>
+          </p>
         </div>
       </footer>
     </div>
+
+    <script src="scripts/app.js"></script>
+
   </body>
 </html>
