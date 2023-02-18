@@ -28,7 +28,7 @@ html {
 .container {
   background-color: black;
   display: grid;
-  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] 3fr [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] 4fr [center-end] minmax(6rem, 1fr) [full-end];
 }
 
 .header {
@@ -222,6 +222,7 @@ html {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  padding: 0 6rem;
   display: grid;
   align-content: center;
   justify-content: center;
