@@ -205,6 +205,11 @@ html {
   display: grid;
   grid-template-rows: repeat(2, max-content);
 }
+@media only screen and (max-width: 470px) {
+  .portfolio {
+    grid-column: full-start/full-end;
+  }
+}
 .portfolio__title {
   text-align: center;
   padding-bottom: 3rem;
@@ -247,6 +252,11 @@ html {
   object-fit: cover;
   transition: 0.3s all;
 }
+@media only screen and (max-width: 900px) {
+  .project__img {
+    margin-bottom: 1rem;
+  }
+}
 .project__img:hover {
   transform: scale(1.01);
 }
@@ -270,6 +280,11 @@ html {
 @media only screen and (max-width: 470px) {
   .project_photo {
     grid-column: span 4;
+  }
+}
+@media only screen and (max-width: 470px) {
+  .project__textarea {
+    margin-left: 2rem;
   }
 }
 
@@ -383,8 +398,8 @@ html {
   top: 3rem;
   right: 3rem;
   z-index: 901;
-  width: 8rem;
-  height: 8rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
   -webkit-transition: 0.4s;
@@ -411,7 +426,7 @@ html {
 .burger-menu__lines {
   position: absolute;
   z-index: 999;
-  width: 5rem;
+  width: 3rem;
   height: 0.3rem;
   background-color: black;
   -webkit-transition: 0.4s;
