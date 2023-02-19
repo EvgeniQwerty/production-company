@@ -76,6 +76,7 @@ function onDocClick(event) {
 
 //sorting start
 const projects = document.querySelectorAll('.project');
+const navItems = document.querySelectorAll('.nav__item')
 
 function onLinkClick(event) {
   const target = event.target;
@@ -85,14 +86,60 @@ function onLinkClick(event) {
     for (let project of projects) {
       if (project.getAttribute('data-sort') !== sort) {
         project.classList.add('display-none');  
+      }
+      else {
+        project.classList.remove('display-none'); 
       } 
     }
+  }
+  else {
+    for (let project of projects) {
+      project.classList.remove('display-none');  
+    }  
   }
 }
 //sorting end
 
+//move to start
+const moveto = new MoveTo();
+navItems.forEach(li => moveto.registerTrigger(li.firstElementChild));
+//move to end
+
+//hamb start
+function burgerMenu(selector) {
+  let menu = $(selector);
+  let button = menu.find('.burger-menu__button', '.burger-menu__lines');
+  let links = menu.find('.burger-menu__link');
+  let overlay = menu.find('.burger-menu__overlay');
+  
+  button.on('click', (e) => {
+    e.preventDefault();
+    toggleMenu();
+  });
+  
+  links.on('click', () => toggleMenu());
+  overlay.on('click', () => toggleMenu());
+  
+  function toggleMenu(){
+    menu.toggleClass('burger-menu_active');
+    
+    if (menu.hasClass('burger-menu_active')) {
+      $('body').css('overlow', 'hidden');
+    } else {
+      $('body').css('overlow', 'visible');
+    }
+  }
+}
+
+burgerMenu('.burger-menu');
+//hamb end
+
 //main
 for (let img of clickables) {
   img.addEventListener("click", onImgClick);
+}
+
+for (let li of navItems) {
+  li.firstElementChild.addEventListener("click", onLinkClick);
 }
 //main
