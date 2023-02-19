@@ -19,8 +19,18 @@
         display: flex
         justify-content: space-between  
 
+        @include respond(phone)
+            //justify-content: baseline
+            flex-direction: column   
+
     &__running
-        font-size: 1.2rem      
+        font-size: 1.2rem 
+
+    &__youtube
+        @include respond(phone)
+            width: 20%
+            height: auto 
+            margin-bottom: 2rem        
 
 
 .bg-video

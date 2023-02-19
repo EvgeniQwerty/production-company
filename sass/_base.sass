@@ -2,6 +2,23 @@ $color-white: white
 $color-black: black
 $color-gray: gray
     
+@mixin respond($breakpoint)
+    @if $breakpoint == phone
+        @media only screen and (max-width: 470px) 
+            @content
+
+    @if $breakpoint == tab-port
+        @media only screen and (max-width: 900px) 
+            @content                  
+    
+    @if $breakpoint == tab-land
+        @media only screen and (max-width: 1201px) 
+            @content
+
+    @if $breakpoint == big-screen
+        @media only screen and (min-width: 1800px) 
+            @content
+
 *, ::after, ::before
     margin: 0
     padding: 0
@@ -30,5 +47,5 @@ html
     background-color: $color-black
 
     display: grid
-    grid-template-columns: [full-start] minmax(5rem, 1fr) [center-start] 5fr [center-end] minmax(5rem, 1fr) [full-end]   
+    grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] 8fr [center-end] minmax(3rem, 1fr) [full-end]   
     //grid-template-rows: repeat(6, min-content)  
