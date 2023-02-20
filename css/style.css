@@ -439,8 +439,14 @@ html {
 }
 .swiper-slide img {
   display: flex;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
+}
+@media only screen and (max-width: 470px) {
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .burger-menu__button {

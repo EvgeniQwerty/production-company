@@ -29,7 +29,7 @@ function removeAllChildren(element) {
 }
 
 function addPhotos(container, folder, quantity) {
-  for (let i = 1; i < quantity+1; i++) {
+  for (let i = 1; i < quantity + 1; i++) {
     // const div = document.createElement("div");
     // div.classList.toggle("swipper-slide");
     // const img = document.createElement("img");
@@ -37,7 +37,9 @@ function addPhotos(container, folder, quantity) {
     // div.appendChild(img);
     // container.appendChild(div);
 
-    swiper.appendSlide(`<div class="swiper-slide"><img src='img/${folder}/${i}.jpg'></img></div>`);
+    swiper.appendSlide(
+      `<div class="swiper-slide"><img src='img/${folder}/${i}.jpg'></img></div>`
+    );
   }
 }
 
