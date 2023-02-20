@@ -24,47 +24,50 @@
           <spun class="burger-menu__lines"></spun>
         </a>
         <nav class="burger-menu__nav">
-          <li class="nav__item burger-menu__link">
-            <a data-sort="all" href="#portfolio">Все проекты</a>
-          </li>
-          <li class="nav__item burger-menu__link">
-            <a data-sort="commercial-video" href="#portfolio"
-              >Рекламные ролики</a
-            >
-          </li>
-          <li class="nav__item burger-menu__link">
-            <a data-sort="clip" href="#portfolio">Клипы</a>
-          </li>
-          <li class="nav__item burger-menu__link">
-            <a data-sort="photoshoot" href="#portfolio">Студийные<br>фотосъёмки</a>
-          </li>
+          <div class="burger-menu__nav-menu">
+            <li class="nav__item burger-menu__link">
+              <a data-sort="all" href="#portfolio">Все проекты</a>
+            </li>
+            <li class="nav__item burger-menu__link">
+              <a data-sort="commercial-video" href="#portfolio"
+                >Рекламные ролики</a
+              >
+            </li>
+            <li class="nav__item burger-menu__link">
+              <a data-sort="photoshoot" href="#portfolio"
+                >Студийные<br />фотосъёмки</a
+              >
+            </li>
+          </div>
+
+          <div class="burger-menu__contacts-box">
+            <div class="contacts">
+              <p class="contacts__title">Follow</p>
+              <div class="contacts__items-box">
+                <p class="contacts__item">
+                  <a class="link" href="https://vk.com">VK</a>
+                </p>
+              </div>
+            </div>
+    
+            <div class="contacts">
+              <p class="contacts__title">Contact</p>
+              <div class="contacts__items-box">
+                <p class="contacts__item">
+                  <a href="tel:+78005553535">8 (800) 555-35-35</a>
+                </p>
+                <p class="contacts__item">
+                  <a href="mailto:test@test.com">test@test.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
         </nav>
-
-        <!-- <div class="burger-menu__contacts">
-          <div class="footer__box">
-            <p class="footer__title">Follow</p>
-            <p class="footer__item">
-              <a class="link" href="https://vk.com">VK</a>
-            </p>
-          </div>
-
-          <div class="footer__box">
-            <p class="footer__title">Contact</p>
-            <p class="footer__item">
-              <a href="tel:+78005553535">8 (800) 555-35-35</a>
-            </p>
-            <p class="footer__item">
-              <a href="mailto:test@test.com">test@test.com</a>
-            </p>
-          </div>
-        </div> -->
 
         <div class="burger-menu_overlay"></div>
       </div>
 
       <header class="header">
-        <!-- <img src="img/Logo white.png" alt="Лого" class="header__logo logo" /> -->
-
         <nav class="header__nav nav">
           <ul class="nav__list">
             <li class="nav__item">
@@ -76,25 +79,15 @@
               >
             </li>
             <li class="nav__item">
-              <a data-sort="clip" href="#portfolio">Клипы</a>
-            </li>
-            <li class="nav__item">
               <a data-sort="photoshoot" href="#portfolio"
                 >Студийные фотосъёмки</a
               >
             </li>
           </ul>
         </nav>
-
-        <!-- <p class="header__contacts">
-          8 (800) 555-35-35 /
-          <span class="bold"
-            ><a href="https://vk.com" class="header__link link">VK</a></span
-          >
-        </p> -->
       </header>
 
-      <!-- <div class="video-container">
+      <div class="video-container">
         <iframe
           class="video-player display-none"
           src="https://player.vimeo.com/video/161658210?h=d600526d09"
@@ -109,27 +102,14 @@
       <div class="carousel-container">
         <div class="swiper display-none">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/photoshoot-1/1.jpg" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/photoshoot-1/1.jpg" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/photoshoot-1/1.jpg" alt="" />
-            </div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
-            <div class="swiper-slide">Slide 6</div>
-            <div class="swiper-slide">Slide 7</div>
-            <div class="swiper-slide">Slide 8</div>
-            <div class="swiper-slide">Slide 9</div>
           </div>
-          <div class="swiper-pagination"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
-      </div> -->
+      </div>
+
+      <div class="bg-black display-none"></div>
+      <!-- <div class="bg-black"></div> -->
 
       <main class="main">
         <div class="bg-grad"></div>
@@ -211,6 +191,8 @@
               alt="Видео"
               class="project__img clickable lazyload"
               data-type="photo"
+              data-folder="1"
+              data-quantity="6"
             />
             <div class="project__textarea">
               <p class="project__title">Maria</p>
@@ -224,6 +206,8 @@
               alt="Видео"
               class="project__img clickable lazyload"
               data-type="photo"
+              data-folder="2"
+              data-quantity="6"
             />
             <div class="project__textarea">
               <p class="project__title">Коста Лакоста - Поневоле</p>
@@ -237,6 +221,8 @@
               alt="Видео"
               class="project__img clickable lazyload"
               data-type="photo"
+              data-folder="3"
+              data-quantity="6"
             />
             <div class="project__textarea">
               <p class="project__title">Maria</p>
@@ -250,6 +236,8 @@
               alt="Видео"
               class="project__img clickable lazyload"
               data-type="photo"
+              data-folder="4"
+              data-quantity="6"
             />
             <div class="project__textarea">
               <p class="project__title">Polina</p>
@@ -263,6 +251,8 @@
               alt="Видео"
               class="project__img clickable lazyload"
               data-type="photo"
+              data-folder="5"
+              data-quantity="1"
             />
             <div class="project__textarea">
               <p class="project__title">Dary Dary</p>
@@ -290,6 +280,8 @@
               alt="Видео"
               class="project__img clickable lazyload"
               data-type="photo"
+              data-folder="6"
+              data-quantity="2"
             />
             <div class="project__textarea">
               <p class="project__title">Margarita</p>
@@ -300,21 +292,25 @@
       </div>
 
       <footer class="footer">
-        <div class="footer__box">
-          <p class="footer__title">Follow</p>
-          <p class="footer__item">
-            <a class="link" href="https://vk.com">VK</a>
-          </p>
+        <div class="contacts">
+          <p class="contacts__title">Follow</p>
+          <div class="contacts__items-box">
+            <p class="contacts__item">
+              <a class="link" href="https://vk.com">VK</a>
+            </p>
+          </div>
         </div>
 
-        <div class="footer__box">
-          <p class="footer__title">Contact</p>
-          <p class="footer__item">
-            <a href="tel:+78005553535">8 (800) 555-35-35</a>
-          </p>
-          <p class="footer__item">
-            <a href="mailto:test@test.com">test@test.com</a>
-          </p>
+        <div class="contacts">
+          <p class="contacts__title">Contact</p>
+          <div class="contacts__items-box">
+            <p class="contacts__item">
+              <a href="tel:+78005553535">8 (800) 555-35-35</a>
+            </p>
+            <p class="contacts__item">
+              <a href="mailto:test@test.com">test@test.com</a>
+            </p>
+          </div>
         </div>
       </footer>
     </div>
