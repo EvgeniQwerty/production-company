@@ -3,7 +3,7 @@ const swiper = new Swiper(".swiper", {
   loop: true,
   // slidesPerView: 3,
   slidesPerView: 1,
-  spaceBetween: 30,
+  spaceBetween: 40,
   allowTouchMove: true,
 
   // Navigation arrows
@@ -22,21 +22,8 @@ const swiperWrapper = document.querySelector(".swiper-wrapper");
 const bg = document.querySelector(".bg-black");
 let videoOrPhoto = videoPlayer;
 
-function removeAllChildren(element) {
-  while (element.firstChild) {
-    element.removeChild(element.firstChild);
-  }
-}
-
 function addPhotos(container, folder, quantity) {
   for (let i = 1; i < quantity + 1; i++) {
-    // const div = document.createElement("div");
-    // div.classList.toggle("swipper-slide");
-    // const img = document.createElement("img");
-    // img.setAttribute("src", `img/${folder}/${i}.jpg`);
-    // div.appendChild(img);
-    // container.appendChild(div);
-
     swiper.appendSlide(
       `<div class="swiper-slide"><img src='img/${folder}/${i}.jpg'></img></div>`
     );
@@ -52,8 +39,13 @@ function onImgClick(event) {
 
     const url = event.target.getAttribute("data-url");
     videoPlayer.setAttribute("src", url);
-    videoPlayer.setAttribute("width", window.innerWidth * 0.8);
-    videoPlayer.setAttribute("height", window.innerHeight * 0.8);
+    if (window.innerWidth > window.innerHeight) {
+      videoPlayer.setAttribute("width", window.innerWidth * 0.8);
+      videoPlayer.setAttribute("height", window.innerHeight * 0.8);
+    } else {
+      videoPlayer.setAttribute("width", window.innerHeight * 0.5);
+      videoPlayer.setAttribute("height", window.innerWidth * 0.5);
+    }
 
     videoPlayer.classList.toggle("display-none");
 
@@ -87,11 +79,13 @@ function onImgClick(event) {
 }
 
 function onDocClick(event) {
+  const swiperSlides = Array.from(document.querySelectorAll(".swiper-slide"));
   console.log(event);
   console.log(4);
   if (
     event.key === "Escape" ||
-    (event.type === "click" && event.target === bg)
+    (event.type === "click" && event.target === bg) ||
+    swiperSlides.includes(event.target)
   ) {
     console.log("display-none");
     videoOrPhoto.classList.toggle("display-none");
@@ -173,3 +167,17 @@ for (let li of navItems) {
   li.firstElementChild.addEventListener("click", onLinkClick);
 }
 //main
+
+//listener for orientation change
+window.addEventListener("resize", function () {
+  //for video
+  if (!videoPlayer.classList.contains("display-none")) {
+    if (window.innerWidth > window.innerHeight) {
+      videoPlayer.setAttribute("width", window.innerWidth * 0.8);
+      videoPlayer.setAttribute("height", window.innerHeight * 0.8);
+    } else {
+      videoPlayer.setAttribute("width", window.innerHeight * 0.5);
+      videoPlayer.setAttribute("height", window.innerWidth * 0.5);
+    }
+  }
+});
