@@ -1,12 +1,17 @@
 .title-1
     font-size: 3.2rem
+    @include respond(phone)
+        font-size: 2.0rem
     font-weight: 500
     text-transform: uppercase
 
 .title-2
-    font-size: 6.4rem
+    //font-size: 51.2rem
+    font-size: 20vw
+    @include respond(phone)
+        font-size: 30vw
     font-weight: 700
-    //line-height: 0.8
+    line-height: 1.2
     text-transform: uppercase
 
 .title-3
@@ -41,3 +46,6 @@
 
 .small
     font-size: 1.2rem           
+
+.black-bg
+    //background-color: $color-black    

@@ -29,13 +29,29 @@
               <a data-sort="all" href="#portfolio">Все проекты</a>
             </li>
             <li class="nav__item burger-menu__link">
+              <a data-sort="all-video" href="#portfolio">Все видео-проекты</a>
+            </li>
+            <li class="nav__item burger-menu__link">
               <a data-sort="commercial-video" href="#portfolio"
                 >Рекламные ролики</a
               >
             </li>
             <li class="nav__item burger-menu__link">
+              <a data-sort="clip" href="#portfolio"
+                >Музыкальные<br />клипы</a
+              >
+            </li>
+            <li class="nav__item burger-menu__link">
+              <a data-sort="all-photo" href="#portfolio">Все фото-проекты</a>
+            </li>
+            <li class="nav__item burger-menu__link">
               <a data-sort="photoshoot" href="#portfolio"
                 >Студийные<br />фотосъёмки</a
+              >
+            </li>
+            <li class="nav__item burger-menu__link">
+              <a data-sort="commercial-photo" href="#portfolio"
+                >Рекламные<br />фотосъёмки</a
               >
             </li>
           </div>
@@ -69,9 +85,25 @@
 
       <header class="header">
         <nav class="header__nav nav">
-          <ul class="nav__list">
+          <ul class="nav__list" id="nav__mainlist">
             <li class="nav__item">
-              <a data-sort="all" href="#portfolio">Все проекты</a>
+              <a data-sort="all" href="#portfolio" id="nav__all">Все проекты</a>
+            </li>
+            <li class="nav__item">
+              <a data-sort="all-video" href="#portfolio" id="nav__video"
+                >Видео</a
+              >
+            </li>
+            <li class="nav__item">
+              <a data-sort="all-photo" href="#portfolio" id="nav__photo"
+                >Фото</a
+              >
+            </li>
+          </ul>
+
+          <ul class="nav__list display-none" id="nav__videolist">
+            <li class="nav__item">
+              <a data-sort="all-video" href="#portfolio">Все видео-проекты</a>
             </li>
             <li class="nav__item">
               <a data-sort="commercial-video" href="#portfolio"
@@ -79,8 +111,24 @@
               >
             </li>
             <li class="nav__item">
+              <a data-sort="clip" href="#portfolio"
+                >Музыкальные клипы</a
+              >
+            </li>
+          </ul>
+
+          <ul class="nav__list display-none" id="nav__photolist">
+            <li class="nav__item">
+              <a data-sort="all-photo" href="#portfolio">Все фото-проекты</a>
+            </li>
+            <li class="nav__item">
               <a data-sort="photoshoot" href="#portfolio"
                 >Студийные фотосъёмки</a
+              >
+            </li>
+            <li class="nav__item">
+              <a data-sort="commercial-photo" href="#portfolio"
+                >Рекламные фотосъёмки</a
               >
             </li>
           </ul>
@@ -124,19 +172,19 @@
             <div class="main__maintext">
               <h2 class="title-2">BAZA</h2>
               <h1 class="title-1 mb3rem">
-                Production team <br />Based in Kirov
+                Видео-фото продакшн<br />полного цикла
               </h1>
             </div>
 
-            <img
+            <!-- <img
               src="icons/youtube.svg"
               alt="showreel"
               class="main__youtube clickable lazyload"
               data-type="video"
               data-url="https://player.vimeo.com/video/161658210?h=d600526d09"
-            />
+            /> -->
           </div>
-          <p class="main__text mb1rem">Clients:</p>
+          <!-- <p class="main__text mb1rem">Clients:</p>
           <marquee
             direction="right"
             scrollamount="5"
@@ -151,143 +199,25 @@
             All contents of this website are the property of BAZA®. No part of
             this site, including all text and images, may be reproduced in any
             form without the prior written consent of BAZA®.
-          </p>
+          </p> -->
+
+          <div class="main__showreel">
+            <img
+              src="icons/youtube.svg"
+              alt="showreel"
+              class="main__youtube clickable lazyload"
+              data-type="video"
+              data-url="https://player.vimeo.com/video/161658210?h=d600526d09"
+            />
+            <p class="main__text">Смотреть шоурил</p>  
+          </div>
+
         </div>
       </main>
 
       <div class="portfolio" id="portfolio">
         <div class="portfolio__projects projects">
-          <div class="project project_video" data-sort="commercial-video">
-            <img
-              src="img/1.png"
-              alt="Видео"
-              class="project__img clickable lazyload"
-              data-type="video"
-              data-url="https://player.vimeo.com/video/293588631?h=f2104258d8"
-            />
-            <div class="project__textarea">
-              <p class="project__title">Тренажёрный зал "Звёздный"</p>
-              <p class="project__type">Рекламный видеоролик</p>
-            </div>
-          </div>
-
-          <div class="project project_video" data-sort="commercial-video">
-            <img
-              src="img/2.gif"
-              alt="Видео"
-              class="project__img clickable lazyload"
-              data-type="video"
-              data-url="https://player.vimeo.com/video/103431880?h=05ba961527"
-            />
-            <div class="project__textarea">
-              <p class="project__title">Кинотеатр "Смена"</p>
-              <p class="project__type">Рекламный видеоролик</p>
-            </div>
-          </div>
-
-          <div class="project project_photo" data-sort="photoshoot">
-            <img
-              src="img/3.jpg"
-              alt="Видео"
-              class="project__img clickable lazyload"
-              data-type="photo"
-              data-folder="1"
-              data-quantity="6"
-            />
-            <div class="project__textarea">
-              <p class="project__title">Maria</p>
-              <p class="project__type">Студийная фотосъёмка</p>
-            </div>
-          </div>
-
-          <div class="project project_photo" data-sort="photoshoot">
-            <img
-              src="img/4.jpg"
-              alt="Видео"
-              class="project__img clickable lazyload"
-              data-type="photo"
-              data-folder="2"
-              data-quantity="6"
-            />
-            <div class="project__textarea">
-              <p class="project__title">Коста Лакоста - Поневоле</p>
-              <p class="project__type">Backstage</p>
-            </div>
-          </div>
-
-          <div class="project project_photo" data-sort="photoshoot">
-            <img
-              src="img/5.jpg"
-              alt="Видео"
-              class="project__img clickable lazyload"
-              data-type="photo"
-              data-folder="3"
-              data-quantity="6"
-            />
-            <div class="project__textarea">
-              <p class="project__title">Maria</p>
-              <p class="project__type">Студийная фотосъёмка</p>
-            </div>
-          </div>
-
-          <div class="project project_photo" data-sort="photoshoot">
-            <img
-              src="img/6.jpg"
-              alt="Видео"
-              class="project__img clickable lazyload"
-              data-type="photo"
-              data-folder="4"
-              data-quantity="6"
-            />
-            <div class="project__textarea">
-              <p class="project__title">Polina</p>
-              <p class="project__type">Студийная фотосъёмка</p>
-            </div>
-          </div>
-
-          <div class="project project_photo" data-sort="photoshoot">
-            <img
-              src="img/7.jpg"
-              alt="Видео"
-              class="project__img clickable lazyload"
-              data-type="photo"
-              data-folder="5"
-              data-quantity="1"
-            />
-            <div class="project__textarea">
-              <p class="project__title">Dary Dary</p>
-              <p class="project__type">Студийная фотосъёмка</p>
-            </div>
-          </div>
-
-          <div class="project project_video" data-sort="commercial-video">
-            <img
-              src="img/8.png"
-              alt="Видео"
-              class="project__img clickable lazyload"
-              data-type="video"
-              data-url="https://player.vimeo.com/video/576212616?h=423ea435a6"
-            />
-            <div class="project__textarea">
-              <p class="project__title">Студия звукозаписи "Acid sound"</p>
-              <p class="project__type">Рекламный видеоролик</p>
-            </div>
-          </div>
-
-          <div class="project project_photo" data-sort="photoshoot">
-            <img
-              src="img/9.jpg"
-              alt="Видео"
-              class="project__img clickable lazyload"
-              data-type="photo"
-              data-folder="6"
-              data-quantity="2"
-            />
-            <div class="project__textarea">
-              <p class="project__title">Margarita</p>
-              <p class="project__type">Студийная фотосъёмка</p>
-            </div>
-          </div>
+          
         </div>
       </div>
 

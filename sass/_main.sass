@@ -11,15 +11,18 @@
     display: grid
     align-content: center
     justify-content: center
+    transition: .3s all
 
     &__wrapper
         position: relative
         z-index: 10
         align-content: center
+        transition: .3s all
 
     &__second-wrapper
         display: flex
-        justify-content: space-between  
+        justify-content: space-between
+        transition: .3s all
 
         @include respond(phone)
             //justify-content: baseline
@@ -30,12 +33,29 @@
 
     &__youtube
         transition: .5s all
+        margin-right: 3rem
         @include respond(phone)
             width: 20%
             height: auto 
             margin-bottom: 2rem    
         &:hover
-            transform: scale(1.10)        
+            transform: scale(1.10)         
+
+    &__maintext h1
+        text-align: right
+
+    &__maintext h2
+        opacity: 1
+        text-align: center    
+    
+    &__showreel
+        display: flex
+        align-items: center 
+        justify-content: center
+
+    &__text
+        font-size: 2.0rem
+        font-weight: 300                    
 
 
 .bg-video
