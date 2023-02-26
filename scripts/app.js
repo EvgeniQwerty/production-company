@@ -375,15 +375,63 @@ navButtonAll.addEventListener("click", onNavButtonClick);
 
 ///////////////////////////////////////////////////////////////////
 //showreel opacity elements
-// const showButton = document.querySelector(".main__youtube");
+const showButton = document.querySelector(".main__youtube");
 
-// function onImgHover(event) {
-//   console.log(event);
-//   const textDiv = document.querySelector(".main__maintext");
-//   textDiv.classList.toggle("opacity0");
-// }
+function fadeIn(el, speed) {
+  var step = 1 / speed;
+  el.style.opacity = "0";
+  var interval = setInterval(function() {
+    if (+el.style.opacity >= 1)
+      clearInterval(interval);
+      
+    el.style.opacity = +el.style.opacity + step;
+  }, speed / 1000);
+}
 
-// showButton.addEventListener("mouseover", onImgHover);
+function fadeOut(el, speed) {
+  var step = 1 / speed;
+  el.style.opacity = "1";
+  var interval = setInterval(function() {
+    if (+el.style.opacity === 0)
+      clearInterval(interval);
+      
+    el.style.opacity = +el.style.opacity - step;
+  }, speed / 1000);
+}
+
+function onImgHover(event) {
+  console.log(event);
+  const textDiv = document.querySelector(".main__maintext");
+  //textDiv.classList.toggle("opacity0");
+  fadeOut(textDiv, 500);
+}
+
+function onImgHoverOut(event) {
+  console.log(event);
+  const textDiv = document.querySelector(".main__maintext");
+  //textDiv.classList.toggle("opacity0");
+  fadeIn(textDiv, 500);
+}
+
+showButton.addEventListener("mouseover", onImgHover);
+showButton.addEventListener("mouseout", onImgHoverOut);
 
 ///////////////////////////////////////////////////////////////////
+//Showing up scrolled projects
+function onEntry(entry) {
+  entry.forEach(change => {
+    if (change.isIntersecting) {
+     change.target.classList.add('element-show');
+    }
+  });
+}
 
+let options = {
+  threshold: [0.5] };
+let observer = new IntersectionObserver(onEntry, options);
+//let elements = document.querySelectorAll('.element-animation');
+
+for (let el of projects) {
+  observer.observe(el);
+}
+///////////////////////////////////////////////////////////////////

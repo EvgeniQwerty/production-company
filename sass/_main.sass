@@ -41,6 +41,11 @@
         &:hover
             transform: scale(1.10)         
 
+    &__maintext
+        animation: fadeIn 2s ease
+        backface-visibility: hidden
+        animation-fill-mode: backwards 
+
     &__maintext h1
         text-align: right
 
@@ -77,3 +82,13 @@
     object-fit: cover
     background: rgba(1, 1, 1, 0.7)
     z-index: 2    
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+        transform: translateY(-100px) 
+    80%
+        transform: translateY(5px)         
+    100%
+        opacity: 1
+        transform: translateY(0px)    
