@@ -76,7 +76,7 @@ const portfolio = [
     type: "video", //"video" or "photo"
     sort: "clip", // "commercial-video", "photoshoot" etc
     cover: "img/8.png", //path to cover
-    videoUrl: "https://player.vimeo.com/video/576212616?h=423ea435a6",
+    videoUrl: "https://player.vimeo.com/video/293588631?h=f2104258d8",
     photoFolder: null, //photo folder
     photoQuantity: null, //quantity of photos in folder
     title: 'Студия звукозаписи "Acid sound"',
