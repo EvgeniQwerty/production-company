@@ -46,14 +46,12 @@ html {
   z-index: 900;
   position: fixed;
   grid-column: full-start/full-end;
+  background: black;
   display: grid;
   grid-gap: 3rem;
-  justify-self: center;
-  justify-content: space-between;
-  align-content: center;
-  grid-template-columns: max-content;
+  width: 100vw;
+  grid-template-columns: 1fr;
   padding: 3rem 3rem;
-  margin-bottom: 1rem;
 }
 @media only screen and (max-width: 900px) {
   .header {
@@ -81,26 +79,11 @@ html {
   color: gray;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  z-index: 900;
-  justify-self: center;
-  padding: 1rem 0;
-  grid-column: full-start/full-end;
-  justify-self: center;
-  display: flex;
-  gap: 3rem;
-}
-@media only screen and (max-width: 900px) {
-  .footer {
-    display: none;
-  }
-}
-
 .contacts {
   display: flex;
   gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
 }
 .contacts__items-box {
   display: flex;
@@ -114,46 +97,41 @@ html {
   text-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.9);
 }
 .contacts__item {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.9);
 }
 
+.footer {
+  grid-column: full-start/full-end;
+}
 @media only screen and (max-width: 900px) {
-  .contacts {
-    display: flex;
-    gap: 1rem;
-    margin-left: 3.5rem;
-  }
-  .contacts__items-box {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-  .contacts__title {
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    margin-bottom: 3rem;
-    font-weight: 500;
-  }
-  .contacts__item {
-    font-size: 1.8rem;
+  .footer {
+    display: none;
   }
 }
+
 .nav {
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 .nav__list {
   transition: 0.3s all;
   display: grid;
-  grid-template-columns: repeat(3, max-content);
+  grid-template-columns: repeat(4, max-content);
+  display: flex;
   align-content: center;
   list-style-type: none;
-  grid-gap: 3rem;
-  margin-bottom: 2rem;
+  gap: 3rem;
+}
+@media only screen and (max-width: 900px) {
+  .nav__list {
+    display: none;
+  }
 }
 @media only screen and (max-width: 470px) {
   .nav__list {
-    grid-gap: 1rem;
+    gap: 1rem;
   }
 }
 .nav__item {
@@ -164,7 +142,7 @@ html {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 2rem;
   color: white;
   transition: all 0.3s;
@@ -174,8 +152,8 @@ html {
 }
 
 .title-1 {
-  font-size: 3.2rem;
-  font-weight: 500;
+  font-size: 2.4rem;
+  font-weight: 300;
   text-transform: uppercase;
 }
 @media only screen and (max-width: 470px) {
@@ -335,16 +313,20 @@ html {
 
 .main {
   background: url(img/bg.jpg) cover;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   grid-column: full-start/full-end;
   position: relative;
   height: 100vh;
   overflow: hidden;
-  padding: 0 6rem;
+  padding: 0 10rem;
   display: grid;
-  align-content: center;
-  justify-content: center;
+  align-content: flex-end;
   transition: 0.3s all;
+}
+@media only screen and (max-width: 900px) {
+  .main {
+    padding: 0 5rem;
+  }
 }
 .main__wrapper {
   position: relative;
@@ -384,11 +366,11 @@ html {
   animation-fill-mode: backwards;
 }
 .main__maintext h1 {
-  text-align: right;
+  text-align: left;
 }
 .main__maintext h2 {
   opacity: 1;
-  text-align: center;
+  text-align: left;
 }
 .main__showreel {
   display: flex;
@@ -398,6 +380,13 @@ html {
 .main__text {
   font-size: 2rem;
   font-weight: 300;
+}
+.main__title {
+  width: 60vw;
+  margin-bottom: 5rem;
+}
+.main__about {
+  margin-bottom: 10rem;
 }
 
 .bg-video {
@@ -451,6 +440,34 @@ html {
   opacity: 1;
   transition: all 1.5s;
   transform: translateY(0%);
+}
+
+.tl {
+  transform: translateX(-2.7%);
+}
+
+.fixed-left {
+  position: fixed;
+  left: 2rem;
+  top: 50%;
+  z-index: 999;
+}
+.fixed-left .contacts__item a {
+  display: block;
+  font-size: 1.8rem;
+  writing-mode: vertical-rl;
+}
+
+.fixed-right {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  z-index: 999;
+}
+.fixed-right .contacts__item a {
+  display: block;
+  font-size: 1.8rem;
+  writing-mode: vertical-lr;
 }
 
 .video-container {
@@ -611,7 +628,7 @@ html {
 
 .burger-menu__link {
   padding: 1.2rem 3rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.5rem;

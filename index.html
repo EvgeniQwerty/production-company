@@ -37,9 +37,7 @@
               >
             </li>
             <li class="nav__item burger-menu__link">
-              <a data-sort="clip" href="#portfolio"
-                >Музыкальные<br />клипы</a
-              >
+              <a data-sort="clip" href="#portfolio">Музыкальные<br />клипы</a>
             </li>
             <li class="nav__item burger-menu__link">
               <a data-sort="all-photo" href="#portfolio">Все фото-проекты</a>
@@ -58,20 +56,17 @@
 
           <div class="burger-menu__contacts-box">
             <div class="contacts">
-              <p class="contacts__title">Подпишись</p>
-              <div class="contacts__items-box">
-                <p class="contacts__item">
-                  <a class="link" href="https://vk.com">VK</a>
-                </p>
-              </div>
-            </div>
-    
-            <div class="contacts">
-              <p class="contacts__title">Связаться</p>
+              <!-- <p class="contacts__title">Связаться</p> -->
               <div class="contacts__items-box">
                 <p class="contacts__item">
                   <a href="tel:+78005553535">8 (800) 555-35-35</a>
                 </p>
+              </div>
+            </div>
+
+            <div class="contacts">
+              <!-- <p class="contacts__title">Связаться</p> -->
+              <div class="contacts__items-box">
                 <p class="contacts__item">
                   <a href="mailto:test@test.com">test@test.com</a>
                 </p>
@@ -101,26 +96,7 @@
             </li>
           </ul>
 
-          <ul class="nav__list display-none" id="nav__videolist">
-            <!-- <li class="nav__item">
-              <a data-sort="all-video" href="#portfolio">Все видео-проекты</a>
-            </li> -->
-            <li class="nav__item">
-              <a data-sort="commercial-video" href="#portfolio"
-                >Рекламные ролики</a
-              >
-            </li>
-            <li class="nav__item">
-              <a data-sort="clip" href="#portfolio"
-                >Музыкальные клипы</a
-              >
-            </li>
-          </ul>
-
           <ul class="nav__list display-none" id="nav__photolist">
-            <!-- <li class="nav__item">
-              <a data-sort="all-photo" href="#portfolio">Все фото-проекты</a>
-            </li> -->
             <li class="nav__item">
               <a data-sort="photoshoot" href="#portfolio"
                 >Студийные фотосъёмки</a
@@ -149,8 +125,7 @@
 
       <div class="carousel-container">
         <div class="swiper display-none">
-          <div class="swiper-wrapper">
-          </div>
+          <div class="swiper-wrapper"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
@@ -170,79 +145,59 @@
         <div class="main__wrapper">
           <div class="main__second-wrapper">
             <div class="main__maintext">
-              <h2 class="title-2">BAZA</h2>
-              <h1 class="title-1 mb3rem">
-                Видео-фото продакшн<br />полного цикла
+              <img src="img/baza.svg" alt="" class="main__title">
+              <h2 class="title-2 display-none">BAZA</h2>
+              <h1 class="title-1 main__about">
+                <span class="bold">Видеопродакшн полного цикла</span><br />
+                Фото и видеосъемка по СНГ и другим странам
               </h1>
             </div>
-
-            <!-- <img
-              src="icons/youtube.svg"
-              alt="showreel"
-              class="main__youtube clickable lazyload"
-              data-type="video"
-              data-url="https://player.vimeo.com/video/161658210?h=d600526d09"
-            /> -->
           </div>
-          <!-- <p class="main__text mb1rem">Clients:</p>
-          <marquee
-            direction="right"
-            scrollamount="5"
-            class="main__running mb3rem"
-          >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Necessitatibus eaque aliquam, incidunt provident aliquid dignissimos
-            totam unde iste repudiandae officia.
-          </marquee>
-
-          <p class="main__rights small">
-            All contents of this website are the property of BAZA®. No part of
-            this site, including all text and images, may be reproduced in any
-            form without the prior written consent of BAZA®.
-          </p> -->
-
-          <div class="main__showreel">
-            <img
-              src="icons/youtube.svg"
-              alt="showreel"
-              class="main__youtube clickable lazyload"
-              data-type="video"
-              data-url="https://player.vimeo.com/video/161658210?h=d600526d09"
-            />
-            <p class="main__text">Смотреть шоурил</p>  
-          </div>
-
         </div>
       </main>
 
       <div class="portfolio" id="portfolio">
+        <nav class="portfolio__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a data-sort="commercial-video" href="#portfolio"
+                >Рекламные ролики</a
+              >
+            </li>
+            <li class="nav__item">
+              <a data-sort="clip" href="#portfolio">Музыкальные клипы</a>
+            </li>
+            <li class="nav__item">
+              <a data-sort="photoshoot" href="#portfolio"
+                >Студийные фотосъёмки</a
+              >
+            </li>
+            <li class="nav__item">
+              <a data-sort="commercial-photo" href="#portfolio"
+                >Рекламные фотосъёмки</a
+              >
+            </li>
+          </ul>
+        </nav>
+
         <div class="portfolio__projects projects">
-          
+          <!-- data added automaticly -->
         </div>
       </div>
 
       <footer class="footer">
-        <div class="contacts">
-          <p class="contacts__title">Попишись</p>
-          <div class="contacts__items-box">
-            <p class="contacts__item">
-              <a class="link" href="https://vk.com">VK</a>
-            </p>
-          </div>
+        <div class="fixed-left">
+          <p class="contacts__item">
+            <a href="tel:+78005553535">8 (800) 555-35-35</a>
+          </p>
         </div>
-
-        <div class="contacts">
-          <p class="contacts__title">Связаться</p>
-          <div class="contacts__items-box">
-            <p class="contacts__item">
-              <a href="tel:+78005553535">8 (800) 555-35-35</a>
-            </p>
-            <p class="contacts__item">
-              <a href="mailto:test@test.com">test@test.com</a>
-            </p>
-          </div>
+        <div class="fixed-right">
+          <p class="contacts__item">
+            <a href="mailto:test@test.com">test@test.com</a>
+          </p>
         </div>
       </footer>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>

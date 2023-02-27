@@ -1,16 +1,19 @@
 .main   
     background: url(img/bg.jpg) cover
     
-    margin-bottom: 5rem
+    margin-bottom: 3rem
     grid-column: full-start / full-end
     position: relative
     height: 100vh
     overflow: hidden
-    padding: 0 6rem
+    padding: 0 10rem
+    @include respond(tab-port)
+        padding: 0 5rem
+
 
     display: grid
-    align-content: center
-    justify-content: center
+    align-content: flex-end
+    //justify-content: center
     transition: .3s all
 
     &__wrapper
@@ -47,11 +50,11 @@
         animation-fill-mode: backwards 
 
     &__maintext h1
-        text-align: right
+        text-align: left
 
     &__maintext h2
         opacity: 1
-        text-align: center    
+        text-align: left    
     
     &__showreel
         display: flex
@@ -60,8 +63,14 @@
 
     &__text
         font-size: 2.0rem
-        font-weight: 300                    
+        font-weight: 300   
 
+    &__title
+        width: 60vw  
+        margin-bottom: 5rem                  
+
+    &__about
+        margin-bottom: 10rem
 
 .bg-video
     position: absolute
