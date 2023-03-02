@@ -388,6 +388,11 @@ html {
 .main__about {
   margin-bottom: 10rem;
 }
+@media only screen and (max-width: 470px) {
+  .main__about {
+    margin-bottom: 15rem;
+  }
+}
 
 .bg-video {
   position: absolute;
