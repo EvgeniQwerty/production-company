@@ -16,6 +16,56 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <title>BAZA</title>
+
+    <link
+      type="image/png"
+      sizes="16x16"
+      rel="icon"
+      href="icons/favicons/16.png"
+    />
+    <link
+      type="image/png"
+      sizes="32x32"
+      rel="icon"
+      href="icons/favicons/32.png"
+    />
+    <link
+      type="image/png"
+      sizes="96x96"
+      rel="icon"
+      href="icons/favicons/96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="72x72"
+      href="icons/favicons/72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="57x57"
+      href="icons/favicons/57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="60x60"
+      href="icons/favicons/60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="72x72"
+      href="icons/favicons/72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="76x76"
+      href="icons/favicons/76.png"
+    />
+    <meta name="msapplication-square70x70logo" content="icons/favicons/70.png" />
   </head>
   <body>
     <div class="container">
@@ -28,9 +78,6 @@
             <li class="nav__item burger-menu__link">
               <a data-sort="all" href="#portfolio">Все проекты</a>
             </li>
-            <!-- <li class="nav__item burger-menu__link">
-              <a data-sort="all-video" href="#portfolio">Все видео-проекты</a>
-            </li> -->
             <li class="nav__item burger-menu__link">
               <a data-sort="commercial-video" href="#portfolio"
                 >Рекламные ролики</a
@@ -39,9 +86,6 @@
             <li class="nav__item burger-menu__link">
               <a data-sort="clip" href="#portfolio">Музыкальные<br />клипы</a>
             </li>
-            <!-- <li class="nav__item burger-menu__link">
-              <a data-sort="all-photo" href="#portfolio">Все фото-проекты</a>
-            </li> -->
             <li class="nav__item burger-menu__link">
               <a data-sort="photoshoot" href="#portfolio"
                 >Студийные<br />фотосъёмки</a
@@ -111,6 +155,8 @@
         </nav>
       </header>
 
+      <img src="icons/cross.svg" alt="" class="exit display-none" />
+
       <div class="video-container">
         <iframe
           class="video-player display-none"
@@ -135,6 +181,8 @@
       <!-- <div class="bg-black"></div> -->
 
       <main class="main">
+        <div class="bg-showreel clickable" data-type="video" data-url="https://player.vimeo.com/video/751393851?h=08acfb9249"></div>
+        
         <div class="bg-grad"></div>
 
         <video class="bg-video lazyload" autoplay muted loop>
@@ -145,7 +193,7 @@
         <div class="main__wrapper">
           <div class="main__second-wrapper">
             <div class="main__maintext">
-              <img src="img/baza.svg" alt="" class="main__title">
+              <img src="img/baza.svg" alt="" class="main__title" />
               <h2 class="title-2 display-none">BAZA</h2>
               <h1 class="title-1 main__about">
                 <span class="bold">Видеопродакшн полного цикла</span><br />
@@ -197,7 +245,6 @@
           </p>
         </div>
       </footer>
-
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>

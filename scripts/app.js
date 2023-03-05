@@ -141,6 +141,8 @@ const videoPlayer = document.querySelector(".video-player");
 const carousel = document.querySelector(".swiper");
 const swiperWrapper = document.querySelector(".swiper-wrapper");
 const bg = document.querySelector(".bg-black");
+const bgShowreel = document.querySelector(".bg-showreel");
+const exit = document.querySelector(".exit");
 let videoOrPhoto = videoPlayer;
 
 function addPhotos(container, folder, quantity) {
@@ -154,6 +156,8 @@ function addPhotos(container, folder, quantity) {
 
 function onImgClick(event) {
   console.log(0);
+
+  exit.classList.toggle("display-none");
 
   const dataType = event.target.getAttribute("data-type");
   if (dataType === "video") {
@@ -201,15 +205,17 @@ function onImgClick(event) {
 
 function onDocClick(event) {
   const swiperSlides = Array.from(document.querySelectorAll(".swiper-slide"));
+  const vpcenter = document.querySelector(".vp-center");
   console.log(event);
   console.log(4);
   if (
     event.key === "Escape" ||
-    (event.type === "click" && event.target === bg) ||
+    (event.type === "click" && (event.target === bg || event.target === exit || event.target === vpcenter)) ||
     swiperSlides.includes(event.target)
   ) {
     console.log("display-none");
     videoOrPhoto.classList.toggle("display-none");
+    exit.classList.toggle("display-none");
     if (videoOrPhoto === videoPlayer) {
       videoOrPhoto.setAttribute("src", "");
     }
@@ -328,102 +334,54 @@ window.addEventListener("resize", function () {
 //listener
 
 ///////////////////////////////////////////////////////////////////
-// //nav menu
-// const navListVideo = document.querySelector("#nav__videolist");
-// const navListPhoto = document.querySelector("#nav__photolist");
-// const navButtonVideo = document.querySelector("#nav__video");
-// const navButtonPhoto = document.querySelector("#nav__photo");
-// const navButtonAll = document.querySelector("#nav__all");
+//showreel opacity elements
+// const showButton = document.querySelector("h2");
+// const textDiv = document.querySelector(".main__maintext");
+// textDiv.style.opacity = "1";
 
-// function onNavButtonClick(event) {
+// function fadeIn(el, speed) {
+//   let step = 1 / speed;
+//   el.style.opacity = "0";
+//   let interval = setInterval(function () {
+//     if (+el.style.opacity >= 1) {
+//       el.style.opacity = "1";
+//       clearInterval(interval);
+//     }
+
+//     el.style.opacity = +el.style.opacity + step;
+//   }, speed / 1000);
+// }
+
+// function fadeOut(el, speed) {
+//   let step = 1 / speed;
+//   el.style.opacity = "1";
+//   let interval = setInterval(function () {
+//     if (+el.style.opacity <= 0) {
+//       el.style.opacity = "0";
+//       clearInterval(interval);
+//     }
+
+//     el.style.opacity = +el.style.opacity - step;
+//   }, speed / 1000);
+// }
+
+// function onBgVideoClick(event) {
 //   console.log(event.target);
+//   //const secondWrapper = document.querySelector(".main__second-wrapper");
+//   //const h2 = document.querySelector("h2");
+//   //const bgGrad = document.querySelector(".bg-grad");
 
-//   if (event.target === navButtonVideo) {
-//     navListVideo.classList.toggle("display-none");
-//     if (
-//       !navListVideo.classList.contains("display-none") &&
-//       !navListPhoto.classList.contains("display-none")
-//     ) {
-//       navListPhoto.classList.toggle("display-none");
-//     }
-//   }
+//   console.log(textDiv.style.opacity);
 
-//   if (event.target === navButtonPhoto) {
-//     navListPhoto.classList.toggle("display-none");
-//     if (
-//       !navListVideo.classList.contains("display-none") &&
-//       !navListPhoto.classList.contains("display-none")
-//     ) {
-//       navListVideo.classList.toggle("display-none");
-//     }
-//   }
-
-//   if (event.target === navButtonAll) {
-//     if (!navListVideo.classList.contains("display-none")) {
-//       navListVideo.classList.toggle("display-none");
-//     }
-//     if (!navListPhoto.classList.contains("display-none")) {
-//       navListPhoto.classList.toggle("display-none");
-//     }
+//   if (
+//     event.target === bgShowreel
+//   ) {
+//     if (+textDiv.style.opacity >= 1) fadeOut(textDiv, 100);
+//     else fadeIn(textDiv, 100);
 //   }
 // }
 
-// navButtonVideo.addEventListener("click", onNavButtonClick);
-// navButtonPhoto.addEventListener("click", onNavButtonClick);
-// navButtonAll.addEventListener("click", onNavButtonClick);
-// //nav menu
-
-///////////////////////////////////////////////////////////////////
-//showreel opacity elements
-const showButton = document.querySelector("h2");
-const textDiv = document.querySelector(".main__maintext");
-textDiv.style.opacity = "1";
-
-function fadeIn(el, speed) {
-  let step = 1 / speed;
-  el.style.opacity = "0";
-  let interval = setInterval(function () {
-    if (+el.style.opacity >= 1) {
-      el.style.opacity = "1";
-      clearInterval(interval);
-    }
-
-    el.style.opacity = +el.style.opacity + step;
-  }, speed / 1000);
-}
-
-function fadeOut(el, speed) {
-  let step = 1 / speed;
-  el.style.opacity = "1";
-  let interval = setInterval(function () {
-    if (+el.style.opacity <= 0) {
-      el.style.opacity = "0";
-      clearInterval(interval);
-    }
-
-    el.style.opacity = +el.style.opacity - step;
-  }, speed / 1000);
-}
-
-function onBgVideoClick(event) {
-  console.log(event.target);
-  const secondWrapper = document.querySelector(".main__second-wrapper");
-  const h2 = document.querySelector("h2");
-  const bgGrad = document.querySelector(".bg-grad");
-
-  console.log(textDiv.style.opacity);
-
-  if (
-    event.target === secondWrapper ||
-    event.target === h2 ||
-    event.target === bgGrad
-  ) {
-    if (+textDiv.style.opacity >= 1) fadeOut(textDiv, 100);
-    else fadeIn(textDiv, 100);
-  }
-}
-
-document.addEventListener("click", onBgVideoClick);
+// document.addEventListener("click", onBgVideoClick);
 
 ///////////////////////////////////////////////////////////////////
 //Showing up scrolled projects
@@ -445,3 +403,5 @@ for (let el of projects) {
   observer.observe(el);
 }
 ///////////////////////////////////////////////////////////////////
+
+document.addEventListener("click", e => {console.log(e.target)});
