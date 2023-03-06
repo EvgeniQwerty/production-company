@@ -210,6 +210,12 @@ function onImgClick(event) {
       bg.style.transition = "opacity .5s";
       bg.style.opacity = 1;
     })
+
+    videoOrPhoto.style.opacity = 0;
+    requestAnimationFrame(function() {
+      videoOrPhoto.style.transition = "opacity 1s";
+      videoOrPhoto.style.opacity = 1;
+    })
   }
 }
 
@@ -343,31 +349,31 @@ window.addEventListener("resize", function () {
 // const textDiv = document.querySelector(".main__maintext");
 // textDiv.style.opacity = "1";
 
-// function fadeIn(el, speed) {
-//   let step = 1 / speed;
-//   el.style.opacity = "0";
-//   let interval = setInterval(function () {
-//     if (+el.style.opacity >= 1) {
-//       el.style.opacity = "1";
-//       clearInterval(interval);
-//     }
+function fadeIn(el, speed) {
+  let step = 1 / speed;
+  el.style.opacity = "0";
+  let interval = setInterval(function () {
+    if (+el.style.opacity >= 1) {
+      el.style.opacity = "1";
+      clearInterval(interval);
+    }
 
-//     el.style.opacity = +el.style.opacity + step;
-//   }, speed / 1000);
-// }
+    el.style.opacity = +el.style.opacity + step;
+  }, speed / 1000);
+}
 
-// function fadeOut(el, speed) {
-//   let step = 1 / speed;
-//   el.style.opacity = "1";
-//   let interval = setInterval(function () {
-//     if (+el.style.opacity <= 0) {
-//       el.style.opacity = "0";
-//       clearInterval(interval);
-//     }
+function fadeOut(el, speed) {
+  let step = 1 / speed;
+  el.style.opacity = "1";
+  let interval = setInterval(function () {
+    if (+el.style.opacity <= 0) {
+      el.style.opacity = "0";
+      clearInterval(interval);
+    }
 
-//     el.style.opacity = +el.style.opacity - step;
-//   }, speed / 1000);
-// }
+    el.style.opacity = +el.style.opacity - step;
+  }, speed / 1000);
+}
 
 // function onBgVideoClick(event) {
 //   console.log(event.target);
