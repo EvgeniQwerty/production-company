@@ -154,6 +154,16 @@ function addPhotos(container, folder, quantity) {
   }
 }
 
+function changeVideoPlayerSize() {
+  if (window.innerWidth > window.innerHeight) {
+    videoPlayer.setAttribute("width", 120 * window.innerHeight / 100);
+    videoPlayer.setAttribute("height", 120 * window.innerHeight / 100 * 9 / 16);
+  } else {
+    videoPlayer.setAttribute("width", 90 * window.innerWidth / 100);
+    videoPlayer.setAttribute("height", 90 * window.innerWidth / 100 * 9 / 16);
+  }
+}
+
 function onImgClick(event) {
   console.log(0);
 
@@ -165,13 +175,7 @@ function onImgClick(event) {
 
     const url = event.target.getAttribute("data-url");
     videoPlayer.setAttribute("src", url);
-    if (window.innerWidth > window.innerHeight) {
-      videoPlayer.setAttribute("width", window.innerWidth * 0.8);
-      videoPlayer.setAttribute("height", window.innerHeight * 0.8);
-    } else {
-      videoPlayer.setAttribute("width", window.innerHeight * 0.5);
-      videoPlayer.setAttribute("height", window.innerWidth * 0.5);
-    }
+    changeVideoPlayerSize();
 
     videoPlayer.classList.toggle("display-none");
 
@@ -200,17 +204,22 @@ function onImgClick(event) {
     document.addEventListener("keydown", onDocClick);
     document.addEventListener("click", onDocClick);
     bg.classList.toggle("display-none");
+    
+    bg.style.opacity = 0;
+    requestAnimationFrame(function() {
+      bg.style.transition = "opacity .5s";
+      bg.style.opacity = 1;
+    })
   }
 }
 
 function onDocClick(event) {
   const swiperSlides = Array.from(document.querySelectorAll(".swiper-slide"));
-  const vpcenter = document.querySelector(".vp-center");
   console.log(event);
   console.log(4);
   if (
     event.key === "Escape" ||
-    (event.type === "click" && (event.target === bg || event.target === exit || event.target === vpcenter)) ||
+    (event.type === "click" && (event.target === bg || event.target === exit)) ||
     swiperSlides.includes(event.target)
   ) {
     console.log("display-none");
@@ -222,6 +231,7 @@ function onDocClick(event) {
 
     document.removeEventListener("keydown", onDocClick);
     document.removeEventListener("click", onDocClick);
+
     bg.classList.toggle("display-none");
   }
 }
@@ -322,13 +332,7 @@ for (let li of navItems) {
 window.addEventListener("resize", function () {
   //for video
   if (!videoPlayer.classList.contains("display-none")) {
-    if (window.innerWidth > window.innerHeight) {
-      videoPlayer.setAttribute("width", window.innerWidth * 0.8);
-      videoPlayer.setAttribute("height", window.innerHeight * 0.8);
-    } else {
-      videoPlayer.setAttribute("width", window.innerHeight * 0.5);
-      videoPlayer.setAttribute("height", window.innerWidth * 0.5);
-    }
+    changeVideoPlayerSize();
   }
 });
 //listener
@@ -374,7 +378,7 @@ window.addEventListener("resize", function () {
 //   console.log(textDiv.style.opacity);
 
 //   if (
-//     event.target === bgShowreel
+//     event.target === bgShowreel 
 //   ) {
 //     if (+textDiv.style.opacity >= 1) fadeOut(textDiv, 100);
 //     else fadeIn(textDiv, 100);
