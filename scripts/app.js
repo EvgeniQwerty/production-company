@@ -15,7 +15,7 @@ const portfolio = [
   {
     type: "video", //"video" or "photo"
     sort: "commercial-video", // "commercial-video", "photoshoot" etc
-    cover: "img/2.gif", //path to cover
+    cover: "img/2.png", //path to cover
     videoUrl: "https://player.vimeo.com/video/103431880?h=05ba961527",
     photoFolder: null, //photo folder
     photoQuantity: null, //quantity of photos in folder
